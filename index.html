@@ -243,14 +243,21 @@
       <p class="eyebrow">LOCATION</p>
       <h2>오시는 길</h2>
       <div class="location">
-        <!-- TODO: 네이버/카카오 지도 퍼가기 iframe 또는 약도 이미지로 교체 -->
-        <div class="map ph">지도 영역</div>
+        <!-- TODO: 약도 이미지(images/map.jpg)로 교체. 무료 호스팅이라 API 키가 필요한 지도 대신 이미지 + 지도 앱 링크를 씁니다 -->
+        <div class="map ph">약도 이미지</div>
+        <div>
         <dl class="loc-info">
           <dt>주소</dt><dd>대구광역시 [구] [도로명 주소] [층/호수]</dd>
           <dt>지하철</dt><dd>[호선] [역명] [0]번 출구에서 도보 약 [0]분</dd>
           <dt>주차</dt><dd>[주차 가능 여부 / 대수 / 인근 공영주차장]</dd>
           <dt>문의</dt><dd><a href="tel:">[전화번호]</a></dd>
         </dl>
+        <!-- TODO: 네이버지도·카카오맵에서 업체 검색 후 '공유 → 링크 복사' 주소 넣기 -->
+        <div class="map-links">
+          <a href="#" class="btn btn-naver btn-sm" target="_blank" rel="noopener">네이버지도 길찾기</a>
+          <a href="#" class="btn btn-kakao btn-sm" target="_blank" rel="noopener">카카오맵 길찾기</a>
+        </div>
+        </div>
       </div>
     </div>
   </section>
@@ -294,7 +301,11 @@
   </div>
 </footer>
 
-<a href="#reserve" class="floating-cta">예약하기</a>
+<!-- TODO: 네이버 예약 / 카카오톡 채널 링크 -->
+<div class="floating-cta">
+  <a href="#" class="fc-kakao" target="_blank" rel="noopener">카톡 문의</a>
+  <a href="#" class="fc-reserve" target="_blank" rel="noopener">네이버 예약</a>
+</div>
 
 <script src="js/main.js"></script>
 </body>

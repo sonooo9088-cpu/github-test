@@ -175,10 +175,15 @@ h3 { font-size: 1.15rem; }
 /* 모바일 플로팅 예약 버튼 */
 .floating-cta {
   display: none; position: fixed; left: 16px; right: 16px; bottom: 16px; z-index: 40;
-  background: var(--accent); color: #fff; text-align: center; font-weight: 700;
-  padding: 16px; border-radius: 999px; text-decoration: none;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, .18);
+  grid-template-columns: 1fr 2fr; gap: 8px;
 }
+.floating-cta a {
+  text-align: center; font-weight: 700; padding: 16px; border-radius: 999px;
+  text-decoration: none; box-shadow: 0 8px 24px rgba(0, 0, 0, .18);
+}
+.fc-kakao { background: var(--kakao); color: #191919; }
+.fc-reserve { background: var(--naver); color: #fff; }
+.map-links { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 24px; }
 
 /* 반응형 */
 @media (max-width: 900px) {
@@ -208,5 +213,5 @@ h3 { font-size: 1.15rem; }
   .gallery { grid-template-columns: 1fr 1fr; }
   .g-item.g-wide { grid-column: span 2; grid-row: auto; }
   .cards, .guide-grid, .steps { grid-template-columns: 1fr; }
-  .floating-cta { display: block; }
+  .floating-cta { display: grid; }
 }

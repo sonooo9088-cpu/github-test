@@ -22,7 +22,7 @@
   var reserve = document.getElementById('reserve');
   if ('IntersectionObserver' in window && floating && reserve) {
     new IntersectionObserver(function (entries) {
-      floating.style.display = entries[0].isIntersecting ? 'none' : '';
+      floating.style.visibility = entries[0].isIntersecting ? 'hidden' : '';
     }).observe(reserve);
   }
 
