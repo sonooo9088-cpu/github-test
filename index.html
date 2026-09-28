@@ -2,27 +2,23 @@
 <html lang="ko">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>MOP 파티룸 | 대구 생일파티·브라이덜샤워·소모임 공간</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>MOP 파티룸</title>
   <meta name="description" content="대구 파티룸 MOP. 생일파티, 브라이덜샤워, 소모임, 촬영까지 프라이빗하게 이용할 수 있는 공간입니다. 요금, 이용시간, 예약 방법, 오시는 길을 확인하세요.">
-  <!-- TODO: 실제 도메인으로 교체 -->
+  <!-- TODO: 도메인 구매 후 교체 -->
   <link rel="canonical" href="https://example.com/">
-
   <meta property="og:type" content="website">
   <meta property="og:title" content="MOP 파티룸 | 대구 프라이빗 파티 공간">
   <meta property="og:description" content="생일파티, 브라이덜샤워, 소모임, 촬영까지. 대구 파티룸 MOP 요금·예약 안내">
   <meta property="og:image" content="images/og.jpg">
-  <meta property="og:url" content="https://example.com/">
   <meta property="og:locale" content="ko_KR">
-
-  <!-- TODO: 네이버 서치어드바이저 사이트 소유확인 코드 -->
   <!-- <meta name="naver-site-verification" content=""> -->
 
-  <link rel="preconnect" href="https://cdn.jsdelivr.net">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;700&family=Unbounded:wght@500;800;900&display=swap">
   <link rel="stylesheet" href="css/style.css">
 
-  <!-- TODO: 주소·전화·영업시간 확정 후 값 채우기 (검색엔진용 업체 정보) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -30,25 +26,21 @@
     "name": "MOP 파티룸",
     "description": "대구 프라이빗 파티룸. 생일파티, 브라이덜샤워, 소모임, 촬영 공간 대여",
     "url": "https://example.com/",
-    "image": "https://example.com/images/og.jpg",
     "telephone": "",
-    "address": {
-      "@type": "PostalAddress",
-      "addressCountry": "KR",
-      "addressRegion": "대구광역시",
-      "addressLocality": "",
-      "streetAddress": ""
-    }
+    "address": { "@type": "PostalAddress", "addressCountry": "KR", "addressRegion": "대구광역시", "addressLocality": "", "streetAddress": "" }
   }
   </script>
 </head>
 <body>
 
+<!-- 시안 안내: 실제 정보로 바꾼 뒤 이 줄 삭제 -->
+<p class="draft-note">시안 · 요금, 시간, 주소는 예시 값이에요</p>
+
 <header class="site-header" id="top">
-  <div class="container header-inner">
-    <a href="#top" class="logo" aria-label="MOP 파티룸 처음으로">MOP<span>party room</span></a>
-    <button class="nav-toggle" aria-label="메뉴 열기" aria-expanded="false" aria-controls="site-nav">
-      <span></span><span></span><span></span>
+  <div class="wrap header-inner">
+    <a href="#top" class="brand" aria-label="MOP 파티룸 처음으로">M<i>O</i>P</a>
+    <button class="nav-toggle" id="nav-toggle" aria-label="메뉴 열기" aria-expanded="false" aria-controls="site-nav">
+      <span></span><span></span>
     </button>
     <nav class="site-nav" id="site-nav">
       <a href="#space">공간</a>
@@ -56,7 +48,7 @@
       <a href="#guide">이용안내</a>
       <a href="#location">오시는 길</a>
       <a href="#faq">FAQ</a>
-      <a href="#reserve" class="btn btn-sm">예약하기</a>
+      <a href="#reserve" class="nav-cta">예약</a>
     </nav>
   </div>
 </header>
@@ -65,153 +57,156 @@
 
   <!-- HERO -->
   <section class="hero">
-    <div class="hero-bg" aria-hidden="true"></div>
-    <div class="container hero-inner">
-      <p class="eyebrow">DAEGU PRIVATE PARTY ROOM</p>
-      <h1>우리끼리만 쓰는<br>대구 파티룸, MOP</h1>
-      <p class="hero-lead">생일파티, 브라이덜샤워, 소모임, 촬영까지.<br>
-        예약한 시간 동안 공간 전체를 프라이빗하게 이용할 수 있어요.</p>
-      <div class="hero-cta">
-        <a href="#reserve" class="btn">예약 방법 보기</a>
-        <a href="#price" class="btn btn-ghost">요금 확인</a>
+    <div class="wrap">
+      <p class="kicker">Daegu · Private party room</p>
+      <h1 class="wordmark" aria-label="MOP">M<span class="dot" aria-hidden="true"></span>P</h1>
+      <div class="hero-row">
+        <div class="hero-copy">
+          <p class="hero-title">예약한 시간만큼,<br>공간 전체가 우리 차지.</p>
+          <p class="hero-lead">생일파티, 브라이덜샤워, 소모임, 촬영까지. 다른 팀과 마주칠 일 없는 대구 파티룸이에요.</p>
+          <div class="hero-cta">
+            <a href="#reserve" class="btn btn-ink">예약 방법</a>
+            <a href="#price" class="btn btn-line">요금 보기</a>
+          </div>
+        </div>
+
+        <!-- TODO: 예시 값 → 실제 값 -->
+        <aside class="ticket" aria-label="이용 요약">
+          <p class="ticket-head">ADMIT ONE TEAM</p>
+          <dl>
+            <div><dt>인원</dt><dd>기준 4명 · 최대 12명</dd></div>
+            <div><dt>타임</dt><dd>데이 · 나이트 · 올나잇</dd></div>
+            <div><dt>요금</dt><dd>평일 데이 <b>60,000원~</b></dd></div>
+            <div><dt>위치</dt><dd>대구 중구 · 반월당역 도보 5분</dd></div>
+          </dl>
+          <p class="ticket-foot">입실 비밀번호는 이용 당일 문자로 보내드려요</p>
+        </aside>
       </div>
-      <!-- TODO: 실제 정보로 교체 -->
-      <ul class="hero-facts">
-        <li><strong>[최대 인원]</strong><span>수용 인원</span></li>
-        <li><strong>[이용 시간]</strong><span>타임 구성</span></li>
-        <li><strong>[위치]</strong><span>가까운 역</span></li>
-      </ul>
     </div>
   </section>
 
-  <!-- 공간 소개 -->
+  <!-- 공간 -->
   <section class="section" id="space">
-    <div class="container">
-      <p class="eyebrow">SPACE</p>
-      <h2>공간 소개</h2>
-      <p class="section-lead">사진만 보고 고르기 어렵다면, 아래 구성부터 확인해 보세요.</p>
+    <div class="wrap split">
+      <header class="sec-head">
+        <p class="kicker">Space</p>
+        <h2>공간 소개</h2>
+        <p class="sec-lead">메인 홀 하나를 통째로 씁니다. 테이블 배치는 인원에 맞춰 바꿀 수 있어요.</p>
+      </header>
+      <div class="sec-body">
+        <!-- TODO: 사진 파일로 교체 (<img src="images/hall.jpg" alt="메인 홀 전경">) -->
+        <div class="gallery">
+          <figure class="shot shot-a"><div class="slot"><span>사진 자리</span>메인 홀 전경<small>가로 4:3 · 입구에서 찍은 넓은 컷</small></div></figure>
+          <figure class="shot shot-b"><div class="slot"><span>사진 자리</span>포토존<small>세로 3:4</small></div></figure>
+          <figure class="shot shot-c"><div class="slot"><span>사진 자리</span>테이블 세팅<small>정사각</small></div></figure>
+          <figure class="shot shot-d"><div class="slot"><span>사진 자리</span>빔프로젝터 화면<small>정사각</small></div></figure>
+        </div>
 
-      <!-- TODO: images/ 폴더에 실제 사진을 넣고 src 교체 -->
-      <div class="gallery">
-        <figure class="g-item g-wide"><div class="ph">메인 홀 사진</div><figcaption>메인 홀</figcaption></figure>
-        <figure class="g-item"><div class="ph">포토존 사진</div><figcaption>포토존</figcaption></figure>
-        <figure class="g-item"><div class="ph">테이블 세팅 사진</div><figcaption>테이블 세팅</figcaption></figure>
-        <figure class="g-item"><div class="ph">빔프로젝터 사진</div><figcaption>빔프로젝터</figcaption></figure>
-        <figure class="g-item"><div class="ph">주방·편의시설 사진</div><figcaption>주방·편의시설</figcaption></figure>
+        <h3 class="minor">비치된 시설</h3>
+        <!-- TODO: 실제 보유 시설만 남기기 -->
+        <ul class="chips">
+          <li>빔프로젝터 · 100인치 스크린</li>
+          <li>넷플릭스 · 유튜브</li>
+          <li>블루투스 스피커</li>
+          <li>냉장고 · 전자레인지</li>
+          <li>식기 · 컵 · 수저</li>
+          <li>풍선 걸이 · 기본 소품</li>
+          <li>Wi-Fi</li>
+        </ul>
       </div>
-
-      <h3 class="sub-title">비치된 시설</h3>
-      <!-- TODO: 실제 보유 시설만 남기기 -->
-      <ul class="amenities">
-        <li>빔프로젝터·스크린</li>
-        <li>블루투스 스피커</li>
-        <li>노래방 기기</li>
-        <li>넷플릭스·유튜브</li>
-        <li>냉장고·전자레인지</li>
-        <li>식기·컵·수저</li>
-        <li>파티 소품</li>
-        <li>Wi-Fi</li>
-      </ul>
     </div>
   </section>
 
   <!-- 이용 목적 -->
-  <section class="section section-alt">
-    <div class="container">
-      <p class="eyebrow">OCCASION</p>
-      <h2>이런 자리에 많이 찾아요</h2>
-      <div class="cards">
-        <article class="card">
-          <div class="card-icon" aria-hidden="true">🎂</div>
-          <h3>생일파티</h3>
-          <p>풍선·가랜드 데코를 하고, 케이크 촬영까지 한 공간에서 끝낼 수 있어요.</p>
-        </article>
-        <article class="card">
-          <div class="card-icon" aria-hidden="true">💐</div>
-          <h3>브라이덜샤워</h3>
-          <p>포토존과 조명이 있어 친구들끼리 스냅 촬영하기 좋습니다.</p>
-        </article>
-        <article class="card">
-          <div class="card-icon" aria-hidden="true">🥂</div>
-          <h3>소모임·연말파티</h3>
-          <p>동창회, 동호회, 송년회처럼 식당보다 조용한 자리가 필요할 때 이용해요.</p>
-        </article>
-        <article class="card">
-          <div class="card-icon" aria-hidden="true">📷</div>
-          <h3>촬영·원데이 클래스</h3>
-          <p>제품 촬영, 프로필 촬영, 소규모 클래스 대관도 문의 가능합니다.</p>
-        </article>
+  <section class="section section-tint">
+    <div class="wrap split">
+      <header class="sec-head">
+        <p class="kicker">Occasion</p>
+        <h2>이런 날 많이 찾아요</h2>
+      </header>
+      <div class="sec-body">
+        <ul class="occasions">
+          <li><h3>생일파티</h3><p>풍선·가랜드 데코부터 케이크 촬영까지 한 공간에서 끝낼 수 있어요.</p></li>
+          <li><h3>브라이덜샤워</h3><p>포토존과 조명이 있어 친구들끼리 스냅 촬영하기 좋아요.</p></li>
+          <li><h3>소모임 · 연말파티</h3><p>식당보다 조용하게, 우리끼리 이야기 나누고 싶을 때.</p></li>
+          <li><h3>촬영 · 클래스</h3><p>제품·프로필 촬영, 소규모 원데이 클래스 대관도 문의 주세요.</p></li>
+        </ul>
       </div>
     </div>
   </section>
 
   <!-- 요금 -->
   <section class="section" id="price">
-    <div class="container">
-      <p class="eyebrow">PRICE</p>
-      <h2>이용 요금</h2>
-      <p class="section-lead">기준 인원 초과 시 추가 요금이 붙습니다. 정확한 금액은 예약 페이지에서 날짜별로 확인해 주세요.</p>
-
-      <!-- TODO: 실제 요금으로 교체 -->
-      <div class="table-wrap">
-        <table class="price-table">
-          <thead>
-            <tr><th scope="col">구분</th><th scope="col">시간</th><th scope="col">평일</th><th scope="col">주말·공휴일</th></tr>
-          </thead>
-          <tbody>
-            <tr><th scope="row">데이 타임</th><td>[00:00~00:00]</td><td>[금액]원</td><td>[금액]원</td></tr>
-            <tr><th scope="row">나이트 타임</th><td>[00:00~00:00]</td><td>[금액]원</td><td>[금액]원</td></tr>
-            <tr><th scope="row">올나잇</th><td>[00:00~익일 00:00]</td><td>[금액]원</td><td>[금액]원</td></tr>
-          </tbody>
-        </table>
+    <div class="wrap split">
+      <header class="sec-head">
+        <p class="kicker">Price</p>
+        <h2>이용 요금</h2>
+        <p class="sec-lead">기준 4명 요금이에요. 날짜별 정확한 금액은 네이버 예약에서 확인할 수 있어요.</p>
+      </header>
+      <div class="sec-body">
+        <!-- TODO: 예시 요금 → 실제 요금 -->
+        <div class="menu">
+          <div class="menu-head"><span></span><span>평일</span><span>주말·공휴일</span></div>
+          <div class="menu-row">
+            <p><b>데이</b><small>11:00 – 16:00</small></p>
+            <span>60,000</span><span>80,000</span>
+          </div>
+          <div class="menu-row">
+            <p><b>나이트</b><small>18:00 – 23:00</small></p>
+            <span>70,000</span><span>90,000</span>
+          </div>
+          <div class="menu-row">
+            <p><b>올나잇</b><small>18:00 – 익일 10:00</small></p>
+            <span>120,000</span><span>150,000</span>
+          </div>
+          <p class="menu-unit">단위 원 · VAT 포함</p>
+        </div>
+        <ul class="fine">
+          <li>1명 추가 시 10,000원 (최대 12명)</li>
+          <li>시간 연장은 다음 예약이 없을 때만, 1시간당 15,000원</li>
+        </ul>
       </div>
-      <ul class="notes">
-        <li>기준 인원 [0]명, 1인 추가 시 [금액]원</li>
-        <li>최대 [0]명까지 이용 가능</li>
-        <li>시간 연장은 다음 예약이 없을 때만 가능 (1시간당 [금액]원)</li>
-      </ul>
     </div>
   </section>
 
   <!-- 이용 안내 -->
-  <section class="section section-alt" id="guide">
-    <div class="container">
-      <p class="eyebrow">GUIDE</p>
-      <h2>이용 안내</h2>
-      <div class="guide-grid">
-        <div class="guide-box">
-          <h3>입실·퇴실</h3>
+  <section class="section section-tint" id="guide">
+    <div class="wrap split">
+      <header class="sec-head">
+        <p class="kicker">Guide</p>
+        <h2>이용 안내</h2>
+      </header>
+      <div class="sec-body rules">
+        <div class="rule">
+          <h3>입실 · 퇴실</h3>
           <ul>
-            <li>입실 비밀번호는 이용 당일 문자로 안내드려요.</li>
-            <li>예약 시간 전 조기 입실은 어렵습니다.</li>
-            <li>퇴실 10분 전부터 정리를 시작해 주세요.</li>
+            <li>입실 비밀번호는 이용 당일 문자로 보내드려요.</li>
+            <li>예약 시간 전에는 입실할 수 없어요.</li>
+            <li>퇴실 10분 전부터 정리해 주세요.</li>
           </ul>
         </div>
-        <div class="guide-box">
-          <h3>음식·주류</h3>
+        <div class="rule">
+          <h3>음식 · 주류</h3>
           <ul>
-            <li>외부 음식, 배달 음식 반입 가능합니다.</li>
-            <li>음식물 쓰레기는 분리해서 지정 장소에 버려 주세요.</li>
-            <!-- TODO: 주류 허용 여부 확인 -->
-            <li>주류 반입: [가능 / 불가]</li>
+            <li>외부 음식, 배달 음식 모두 가져올 수 있어요.</li>
+            <li>음식물 쓰레기는 분리해서 지정 통에 버려 주세요.</li>
+            <li>주류 반입 가능 <em>(예시)</em></li>
           </ul>
         </div>
-        <div class="guide-box">
-          <h3>금지 사항</h3>
+        <div class="rule">
+          <h3>하면 안 되는 것</h3>
           <ul>
             <li>실내 전 구역 금연</li>
-            <li>폭죽, 촛불 외 화기 사용 금지</li>
-            <li>벽면 테이프·못 사용 금지 (데코는 비치된 걸이 이용)</li>
-            <li>22시 이후 고성방가 자제</li>
+            <li>생일 초 외 화기, 폭죽 사용 금지</li>
+            <li>벽면 테이프 금지 · 비치된 걸이 사용</li>
           </ul>
         </div>
-        <div class="guide-box">
-          <h3>환불 규정</h3>
-          <!-- TODO: 실제 환불 규정으로 교체 -->
+        <div class="rule">
+          <h3>환불 <em>(예시)</em></h3>
           <ul>
-            <li>이용 [0]일 전까지: 100% 환불</li>
-            <li>이용 [0]일 전: [0]% 환불</li>
-            <li>이용 당일: 환불 불가</li>
+            <li>이용 3일 전까지 100%</li>
+            <li>이용 2일 전 50%</li>
+            <li>전날 · 당일 환불 불가</li>
           </ul>
         </div>
       </div>
@@ -219,71 +214,72 @@
   </section>
 
   <!-- 예약 -->
-  <section class="section" id="reserve">
-    <div class="container reserve">
-      <p class="eyebrow">RESERVATION</p>
-      <h2>예약 방법</h2>
-      <ol class="steps">
-        <li><strong>날짜·타임 선택</strong><span>예약 페이지에서 가능한 시간을 확인해요.</span></li>
-        <li><strong>예약·결제</strong><span>인원 수를 입력하고 결제하면 예약이 확정됩니다.</span></li>
-        <li><strong>입실 안내 수신</strong><span>이용 당일 비밀번호와 이용 안내를 보내드려요.</span></li>
-      </ol>
-      <!-- TODO: 실제 예약·문의 링크로 교체 -->
-      <div class="reserve-cta">
-        <a href="#" class="btn btn-naver" target="_blank" rel="noopener">네이버 예약하기</a>
-        <a href="#" class="btn btn-kakao" target="_blank" rel="noopener">카카오톡 문의</a>
-        <a href="#" class="btn btn-ghost" target="_blank" rel="noopener">인스타그램</a>
+  <section class="section section-ink" id="reserve">
+    <div class="wrap split">
+      <header class="sec-head">
+        <p class="kicker">Reservation</p>
+        <h2>예약은 세 단계</h2>
+      </header>
+      <div class="sec-body">
+        <ol class="steps">
+          <li><b>날짜 · 타임 선택</b><span>네이버 예약에서 빈 시간을 확인해요.</span></li>
+          <li><b>인원 입력 · 결제</b><span>결제가 끝나면 바로 확정돼요.</span></li>
+          <li><b>입실 안내 받기</b><span>당일 비밀번호와 이용 안내를 문자로 보내드려요.</span></li>
+        </ol>
+        <!-- TODO: 실제 링크 -->
+        <div class="reserve-cta">
+          <a href="#" class="btn btn-naver" target="_blank" rel="noopener">네이버 예약하기</a>
+          <a href="#" class="btn btn-kakao" target="_blank" rel="noopener">카카오톡 문의</a>
+          <a href="#" class="btn btn-ghost" target="_blank" rel="noopener">인스타그램</a>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- 오시는 길 -->
-  <section class="section section-alt" id="location">
-    <div class="container">
-      <p class="eyebrow">LOCATION</p>
-      <h2>오시는 길</h2>
-      <div class="location">
-        <!-- TODO: 약도 이미지(images/map.jpg)로 교체. 무료 호스팅이라 API 키가 필요한 지도 대신 이미지 + 지도 앱 링크를 씁니다 -->
-        <div class="map ph">약도 이미지</div>
-        <div>
-        <dl class="loc-info">
-          <dt>주소</dt><dd>대구광역시 [구] [도로명 주소] [층/호수]</dd>
-          <dt>지하철</dt><dd>[호선] [역명] [0]번 출구에서 도보 약 [0]분</dd>
-          <dt>주차</dt><dd>[주차 가능 여부 / 대수 / 인근 공영주차장]</dd>
-          <dt>문의</dt><dd><a href="tel:">[전화번호]</a></dd>
+  <section class="section" id="location">
+    <div class="wrap split">
+      <header class="sec-head">
+        <p class="kicker">Location</p>
+        <h2>오시는 길</h2>
+      </header>
+      <div class="sec-body">
+        <!-- TODO: 약도 이미지(images/map.jpg)로 교체 -->
+        <div class="map"><div class="slot"><span>약도 자리</span>역 출구에서 건물까지 동선<small>가로 16:9</small></div></div>
+        <!-- TODO: 예시 주소 → 실제 주소 -->
+        <dl class="info">
+          <div><dt>주소</dt><dd>대구광역시 중구 ○○로 00, 3층 <em>(예시)</em></dd></div>
+          <div><dt>지하철</dt><dd>1·2호선 반월당역 14번 출구, 도보 약 5분 <em>(예시)</em></dd></div>
+          <div><dt>주차</dt><dd>건물 주차 불가, 인근 공영주차장 이용 <em>(예시)</em></dd></div>
+          <div><dt>문의</dt><dd>010-0000-0000</dd></div>
         </dl>
-        <!-- TODO: 네이버지도·카카오맵에서 업체 검색 후 '공유 → 링크 복사' 주소 넣기 -->
         <div class="map-links">
-          <a href="#" class="btn btn-naver btn-sm" target="_blank" rel="noopener">네이버지도 길찾기</a>
-          <a href="#" class="btn btn-kakao btn-sm" target="_blank" rel="noopener">카카오맵 길찾기</a>
-        </div>
+          <a href="#" class="btn btn-sm btn-naver" target="_blank" rel="noopener">네이버지도 길찾기</a>
+          <a href="#" class="btn btn-sm btn-kakao" target="_blank" rel="noopener">카카오맵 길찾기</a>
         </div>
       </div>
     </div>
   </section>
 
   <!-- FAQ -->
-  <section class="section" id="faq">
-    <div class="container narrow">
-      <p class="eyebrow">FAQ</p>
-      <h2>자주 묻는 질문</h2>
-      <!-- TODO: 실제 운영 기준에 맞게 답변 수정 -->
-      <div class="faq">
+  <section class="section section-tint" id="faq">
+    <div class="wrap split">
+      <header class="sec-head">
+        <p class="kicker">FAQ</p>
+        <h2>자주 묻는 질문</h2>
+      </header>
+      <div class="sec-body faq">
         <details>
           <summary>데코는 직접 해야 하나요?</summary>
-          <p>기본 소품은 비치되어 있고, 추가 데코는 직접 준비해 오시면 됩니다. 벽면에 테이프는 사용할 수 없으니 비치된 걸이를 이용해 주세요.</p>
+          <p>기본 소품은 비치돼 있고, 추가 데코는 직접 준비해 오시면 돼요. 벽면에는 테이프를 쓸 수 없어서 비치된 걸이를 이용해 주세요.</p>
         </details>
         <details>
-          <summary>케이크나 음식을 미리 보관할 수 있나요?</summary>
-          <p>이용 시간 전에는 입실이 어려워 사전 보관은 불가합니다. 입실 후 냉장고를 이용해 주세요.</p>
+          <summary>케이크나 음식을 미리 맡겨둘 수 있나요?</summary>
+          <p>예약 시간 전에는 입실이 안 돼서 미리 보관은 어려워요. 입실한 뒤 냉장고를 쓰시면 돼요.</p>
         </details>
         <details>
-          <summary>반려동물 동반이 가능한가요?</summary>
-          <p>[가능 / 불가] — 운영 기준에 맞게 수정해 주세요.</p>
-        </details>
-        <details>
-          <summary>인원이 당일에 늘어나면 어떻게 하나요?</summary>
-          <p>최대 인원 안에서는 현장 추가 결제로 이용할 수 있어요. 최대 인원을 넘는 경우 입실이 제한될 수 있습니다.</p>
+          <summary>당일에 인원이 늘어나면요?</summary>
+          <p>최대 12명 안에서는 현장에서 추가 결제하면 돼요. 12명을 넘으면 입실이 제한될 수 있어요.</p>
         </details>
       </div>
     </div>
@@ -292,19 +288,18 @@
 </main>
 
 <footer class="site-footer">
-  <div class="container footer-inner">
-    <p class="logo">MOP<span>party room</span></p>
-    <!-- TODO: 사업자 정보 입력 -->
-    <p class="biz">상호 MOP 파티룸 · 대표 [이름] · 사업자등록번호 [000-00-00000]<br>
-      주소 대구광역시 [주소] · 문의 [전화번호]</p>
-    <p class="copy">© <span id="year"></span> MOP party room</p>
+  <div class="wrap footer-inner">
+    <p class="brand">M<i>O</i>P</p>
+    <!-- TODO: 사업자 정보 -->
+    <p>상호 MOP 파티룸 · 대표 [이름] · 사업자등록번호 [000-00-00000]<br>대구광역시 [주소] · 010-0000-0000</p>
+    <p class="copy">© <span id="year">2026</span> MOP party room</p>
   </div>
 </footer>
 
 <!-- TODO: 네이버 예약 / 카카오톡 채널 링크 -->
-<div class="floating-cta">
-  <a href="#" class="fc-kakao" target="_blank" rel="noopener">카톡 문의</a>
-  <a href="#" class="fc-reserve" target="_blank" rel="noopener">네이버 예약</a>
+<div class="dock" id="dock">
+  <a href="#" class="dock-kakao" target="_blank" rel="noopener">카톡 문의</a>
+  <a href="#" class="dock-naver" target="_blank" rel="noopener">네이버 예약</a>
 </div>
 
 <script src="js/main.js"></script>
