@@ -1,0 +1,163 @@
+<style>
+.cg-page{--navy:#14213d;--orange:#ff7a1a;--cream:#fff7ed;--line:#e3e6ec;--muted:#5b6475;color:#222;line-height:1.75;font-size:16px}
+.cg-page *{box-sizing:border-box}
+.cg-page p{margin:0 0 1rem}
+.cg-page h3{font-size:1.08rem;line-height:1.5;margin:0}
+.cg-bar{display:flex;align-items:center;gap:10px;margin:2.4rem 0 1rem;padding:14px 18px;background:var(--cream);border-left:6px solid var(--orange);border-radius:0 12px 12px 0;font-size:1.22rem;line-height:1.4;font-weight:800;color:var(--navy)}
+.cg-bar:first-of-type{margin-top:1.2rem}
+.cg-call{background:#fffaf5;border:1px solid #ffe0c7;border-left:6px solid var(--orange);border-radius:0 14px 14px 0;padding:16px 18px;margin:0 0 1rem}
+.cg-call p:last-child{margin-bottom:0}
+.cg-call.navy{background:#f5f7fb;border-color:#dbe1ee;border-left-color:var(--navy)}
+.cg-call b{color:var(--navy)}
+.cg-notice{background:#f5f7fb;border:1px solid #dbe1ee;border-radius:12px;padding:13px 16px;font-size:.93rem;line-height:1.7;margin:0 0 6px}
+.cg-notice strong{display:inline-block;background:var(--navy);color:#fff;border-radius:6px;padding:1px 8px;margin-right:6px;font-size:.8rem}
+.cg-fig{margin:0}
+.cg-zoom{position:relative;display:block;width:100%;padding:0;border:0;border-radius:14px;overflow:hidden;background:var(--cream);cursor:zoom-in;line-height:0}
+.cg-zoom svg,.cg-zoom img{display:block;width:100%;height:auto;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.cg-zoom-ic{position:absolute;right:8px;bottom:8px;width:28px;height:28px;border-radius:50%;background:rgba(20,33,61,.82);color:#fff;font-size:17px;line-height:28px;text-align:center;opacity:0;transition:opacity .25s}
+.cg-zoom:focus-visible,.cg-thumb:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
+@media (hover:hover){.cg-zoom:hover svg,.cg-zoom:hover img{transform:scale(1.09)}.cg-zoom:hover .cg-zoom-ic{opacity:1}}
+@media (hover:none){.cg-zoom-ic{opacity:1}}
+.cg-row{display:grid;grid-template-columns:132px 1fr 156px;gap:18px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:18px;padding:14px;box-shadow:0 6px 20px rgba(20,33,61,.08);margin:0 0 14px}
+.cg-thumb{display:block;width:132px;height:132px;border-radius:14px;overflow:hidden;background:var(--navy);line-height:0;position:relative;text-decoration:none}
+.cg-thumb svg,.cg-thumb img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.cg-thumb::after{content:"가입하러 가기 →";position:absolute;left:0;right:0;bottom:0;padding:7px 0;background:rgba(20,33,61,.88);color:#fff;font-size:.78rem;font-weight:700;line-height:1.2;text-align:center;transform:translateY(100%);transition:transform .3s}
+@media (hover:hover){.cg-thumb:hover svg,.cg-thumb:hover img{transform:scale(1.14)}.cg-thumb:hover::after{transform:translateY(0)}}
+.cg-row-title{margin:0 0 4px;font-weight:800;font-size:1.12rem;line-height:1.45;color:var(--navy)}
+.cg-row-sub{margin:0 0 8px;font-size:.9rem;color:var(--muted)}
+.cg-codechip{display:inline-block;background:#f4f5f8;border:1px dashed #aab3c5;border-radius:8px;padding:3px 12px;font-size:1.15rem;font-weight:800;letter-spacing:2px;color:var(--navy);font-family:ui-monospace,Menlo,Consolas,monospace;user-select:all;-webkit-user-select:all}
+.cg-row-act{display:flex;flex-direction:column;gap:8px}
+.cg-btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 14px;border-radius:10px;font-size:1rem;font-weight:800;text-decoration:none;cursor:pointer;border:2px solid var(--orange);line-height:1.2;font-family:inherit;transition:transform .15s,background .2s}
+.cg-btn:active{transform:scale(.97)}
+.cg-btn:focus-visible{outline:3px solid var(--navy);outline-offset:2px}
+.cg-btn-fill{background:var(--orange);color:var(--navy)}
+.cg-btn-fill:hover{background:#ff8f3f}
+.cg-btn-go{background:var(--navy);border-color:var(--navy);color:#fff}
+.cg-btn-go:hover{background:#1d2f57;color:#fff}
+.cg-steps{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:12px 0 6px}
+.cg-step{background:#fff;border:1px solid var(--line);border-radius:16px;padding:12px 12px 14px;box-shadow:0 4px 14px rgba(20,33,61,.05)}
+.cg-step h3{margin:12px 4px 2px;color:var(--navy)}
+.cg-step p{margin:0 4px;font-size:.95rem;color:#333}
+.cg-note{font-size:.85rem;color:var(--muted);margin:6px 0 1rem}
+.cg-tbl{width:100%;border-collapse:separate;border-spacing:0;border-radius:12px;overflow:hidden;box-shadow:0 2px 12px rgba(20,33,61,.09);margin:0 0 1rem;font-size:.96rem}
+.cg-tbl thead th{background:var(--navy);color:#fff;padding:13px 16px;text-align:left;font-weight:800}
+.cg-tbl.red thead th{background:#d9423f}
+.cg-tbl td{padding:12px 16px;border-bottom:1px solid var(--line);vertical-align:top;background:#fff}
+.cg-tbl tbody tr:nth-child(even) td{background:#fafbfc}
+.cg-tbl tbody tr:last-child td{border-bottom:0}
+.cg-tbl td:first-child{width:30%}
+.cg-badge{display:inline-block;padding:3px 10px;border-radius:7px;background:#e6f0ff;color:#1d3f8f;font-weight:800;font-size:.9rem;line-height:1.5}
+.cg-tbl.red .cg-badge{background:#fde3e1;color:#a92d2a}
+.cg-qa{border:1px solid var(--line);border-radius:14px;padding:12px 16px 4px;margin:0 0 12px;background:#fff}
+.cg-qa h3{color:var(--navy);margin:0 0 6px}
+.cg-qa h3::before{content:"Q. ";color:var(--orange)}
+.cg-log{margin:0 0 1rem;padding:0;list-style:none}
+.cg-log li{padding:10px 14px;background:#f5f7fb;border-radius:10px}
+.cg-sum{margin:0;padding-left:1.2rem}
+.cg-sum li{margin:6px 0}
+.cg-ref{font-size:.85rem;color:var(--muted)}
+.cg-end{height:1px}
+.cg-toast{position:fixed;left:50%;bottom:90px;transform:translate(-50%,20px);background:var(--navy);color:#fff;padding:11px 18px;border-radius:999px;font-size:.92rem;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.25);opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;z-index:99998;max-width:calc(100% - 32px);text-align:center}
+.cg-toast.on{opacity:1;transform:translate(-50%,0)}
+.cg-sticky{position:fixed;left:0;right:0;bottom:0;z-index:99997;background:var(--navy);color:#fff;padding:10px 14px calc(10px + env(safe-area-inset-bottom));display:none;align-items:center;gap:10px;transform:translateY(110%);transition:transform .3s}
+.cg-sticky.on{transform:translateY(0)}
+.cg-sticky b{font-size:1.1rem;letter-spacing:1.5px;color:var(--orange);flex:1;white-space:nowrap;font-family:ui-monospace,Menlo,Consolas,monospace}
+.cg-sticky .cg-btn{min-height:44px;padding:0 14px;font-size:.92rem}
+.cg-sticky .cg-btn-go{border-color:#fff}
+.cg-lb{position:fixed;inset:0;z-index:99999;background:rgba(10,16,32,.86);display:none;align-items:center;justify-content:center;padding:20px}
+.cg-lb.on{display:flex}
+.cg-lb-in{position:relative;width:min(920px,100%);max-height:100%;text-align:center}
+.cg-lb-body svg,.cg-lb-body img{display:block;width:100%;height:auto;max-height:78vh;object-fit:contain;border-radius:14px;background:#fff}
+.cg-lb-cap{margin:10px 0 0;color:#e6e9f0;font-size:.95rem}
+.cg-lb-x{position:absolute;right:-6px;top:-46px;width:40px;height:40px;border-radius:50%;border:0;background:#fff;color:var(--navy);font-size:22px;font-weight:800;cursor:pointer}
+@media (max-width:720px){
+.cg-bar{font-size:1.1rem;padding:12px 14px}
+.cg-row{grid-template-columns:96px 1fr;gap:12px}
+.cg-thumb{width:96px;height:96px}
+.cg-thumb::after{display:none}
+.cg-row-act{grid-column:1 / -1;flex-direction:row}
+.cg-row-act .cg-btn{flex:1}
+.cg-steps{grid-template-columns:1fr}
+.cg-sticky{display:flex}
+.cg-tbl td:first-child{width:36%}
+.cg-lb-x{top:-48px;right:0}
+}
+@media (prefers-reduced-motion:reduce){.cg-zoom svg,.cg-zoom img,.cg-thumb svg,.cg-thumb img,.cg-thumb::after,.cg-toast,.cg-sticky,.cg-btn{transition:none}}
+</style>
+<div class="cg-page">
+<div class="cg-notice"><strong>광고·제휴 안내</strong>이 페이지에는 제 미트리 추천 코드가 들어 있습니다. 이 코드로 가입한 신규 회원이 상품을 구매하면, 저는 미트리 리워드 프로그램에 따라 구매 금액의 일부(최대 7%)를 리워드로 받습니다. 쿠폰가게는 미트리 공식 사이트가 아닙니다.</div>
+<h2 class="cg-bar"><span aria-hidden="true">📋</span>미트리 추천인 코드 한눈에 보기</h2>
+<div class="cg-call"><p><b>🎯 핵심 포인트:</b> 미트리는 회원가입 화면의 추천 코드 칸에 코드를 넣을 수 있고, 아래 가입 링크로 들어가면 코드가 함께 전달됩니다. 2026.10.15 기준 공식 홈페이지 배너에서 확인되는 신규 회원 쿠폰은 첫 구매 회원 전용 3,000원, 카카오톡 채널 추가 전용 2,000원입니다.</p></div>
+<h2 class="cg-bar"><span aria-hidden="true">💳</span>미트리 추천 코드</h2>
+<div class="cg-row">
+<a class="cg-thumb" href="https://metree.co.kr/index/index.php?sponsor=100343146" target="_blank" rel="sponsored nofollow noopener" aria-label="미트리 가입 링크 열기"><img src="https://coupongage.com/wp-content/uploads/2026/10/metree-referral-code-thumb.png" width="600" height="600" alt="미트리 추천 코드 첫 구매 쿠폰 3,000원 안내" decoding="async"></a>
+<div class="cg-row-body"><p class="cg-row-title">가입할 때 추천 코드 입력 · 첫 구매 쿠폰 3,000원</p><p class="cg-row-sub">첫 구매 회원 전용 · 카카오톡 채널 추가 2,000원 · 확인일 2026.10.15</p><span class="cg-codechip">100343146</span></div>
+<div class="cg-row-act"><button type="button" class="cg-btn cg-btn-fill" data-cg-copy="100343146">코드 복사</button><a class="cg-btn cg-btn-go" href="https://metree.co.kr/index/index.php?sponsor=100343146" target="_blank" rel="sponsored nofollow noopener">가입하러 가기 →</a></div>
+</div>
+<p>추천 코드로 가입했을 때만 따로 주는 가입자 혜택은 공식 안내에서 확인하지 못했습니다. 그래서 이 페이지에는 공식 홈페이지에서 직접 확인한 쿠폰만 적었어요. 아래 내용은 2026년 10월 15일에 공식 홈페이지와 리워드 프로그램 안내를 확인해 정리했습니다.</p>
+<h2 class="cg-bar"><span aria-hidden="true">🧭</span>입력 순서</h2>
+<div class="cg-call navy"><p><b>✅ 가입 전 확인:</b> 링크를 연 화면의 주소에 metree.co.kr이 들어 있는지 확인하세요. 그리고 링크를 누른 브라우저에서 바로 가입하는 게 안전합니다.</p></div>
+<div class="cg-steps">
+<div class="cg-step"><figure class="cg-fig"><button type="button" class="cg-zoom" data-cg-zoom data-caption="1단계 · 가입 링크를 눌러 추천 코드와 함께 미트리로 이동합니다 (안내 그림)" aria-label="1단계 가입 링크 누르기 크게 보기"><img src="https://coupongage.com/wp-content/uploads/2026/10/metree-referral-step1-link.png" width="1000" height="625" alt="미트리 가입 링크를 눌러 추천 코드가 함께 전달되는 안내 그림" decoding="async" loading="lazy"><span class="cg-zoom-ic" aria-hidden="true">＋</span></button></figure><h3>가입 링크 누르기</h3><p>위의 가입하러 가기를 누릅니다. 링크로 들어가면 추천 코드가 함께 전달되는 것을 2026.10.15에 확인했습니다.</p></div>
+<div class="cg-step"><figure class="cg-fig"><button type="button" class="cg-zoom" data-cg-zoom data-caption="2단계 · 회원가입 화면 맨 위쪽의 추천 코드 칸을 확인합니다 (안내 그림)" aria-label="2단계 추천 코드 칸 확인 크게 보기"><img src="https://coupongage.com/wp-content/uploads/2026/10/metree-referral-step2-field.png" width="1000" height="625" alt="가입 화면 맨 위의 추천 코드 입력칸을 확인하는 안내 그림" decoding="async" loading="lazy"><span class="cg-zoom-ic" aria-hidden="true">＋</span></button></figure><h3>추천 코드 칸 확인</h3><p>회원가입 화면 맨 위쪽에 추천 코드 입력칸이 있습니다. 100343146가 들어 있는지 확인하세요.</p></div>
+<div class="cg-step"><figure class="cg-fig"><button type="button" class="cg-zoom" data-cg-zoom data-caption="3단계 · 칸이 비어 있으면 복사한 코드 100343146를 붙여넣습니다 (안내 그림)" aria-label="3단계 비어 있으면 붙여넣기 크게 보기"><img src="https://coupongage.com/wp-content/uploads/2026/10/metree-referral-step3-paste.png" width="1000" height="625" alt="추천 코드 100343146를 붙여넣는 안내 그림" decoding="async" loading="lazy"><span class="cg-zoom-ic" aria-hidden="true">＋</span></button></figure><h3>비어 있으면 붙여넣기</h3><p>칸이 비어 있으면 코드 복사 버튼으로 복사한 100343146를 붙여넣습니다. 직접 치는 것보다 오타가 없어요.</p></div>
+<div class="cg-step"><figure class="cg-fig"><button type="button" class="cg-zoom" data-cg-zoom data-caption="4단계 · 가입을 마친 뒤 마이페이지에서 쿠폰함을 확인합니다 (안내 그림)" aria-label="4단계 쿠폰함 확인하기 크게 보기"><img src="https://coupongage.com/wp-content/uploads/2026/10/metree-referral-step4-coupon.png" width="1000" height="625" alt="가입 후 쿠폰함에서 쿠폰 금액을 확인하는 안내 그림" decoding="async" loading="lazy"><span class="cg-zoom-ic" aria-hidden="true">＋</span></button></figure><h3>쿠폰함 확인하기</h3><p>가입을 마친 뒤 마이페이지에서 쿠폰함을 열어 받은 쿠폰의 금액과 유효기간을 확인합니다. 메뉴 이름은 화면에 따라 다를 수 있어요.</p></div>
+</div>
+<p class="cg-note">그림은 이해를 돕는 안내 그림이며 실제 미트리 화면과 다를 수 있습니다. 이미지를 누르면 크게 볼 수 있어요.</p>
+<h2 class="cg-bar"><span aria-hidden="true">🎟️</span>쿠폰 한눈에 보기</h2>
+<table class="cg-tbl"><thead><tr><th>쿠폰</th><th>금액</th><th>조건</th></tr></thead><tbody>
+<tr><td><span class="cg-badge">첫 구매 감사 쿠폰</span></td><td>3,000원</td><td>첫 구매 회원 전용</td></tr>
+<tr><td><span class="cg-badge">채널 추가 쿠폰</span></td><td>2,000원</td><td>카카오톡 채널 추가</td></tr>
+</tbody></table>
+<p>2026.10.15 기준 공식 홈페이지 배너 문구입니다. 사용 조건, 유효기간, 중복 사용 여부는 배너만으로는 알 수 없어서, 가입 후 쿠폰함의 상세 안내를 확인하세요.</p>
+<h2 class="cg-bar"><span aria-hidden="true">🤝</span>추천 코드는 누가 무엇을 받나요</h2>
+<div class="cg-call navy"><p>미트리 공식 리워드 프로그램 안내에는 <b>추천 리워드</b>가 있습니다. 나의 추천 코드로 가입한 신규 회원이 상품을 구매하면, 코드 주인(파트너)이 최대 7%의 리워드를 받는 구조예요.</p><p>이 페이지의 코드 주인은 저라서, 이 코드로 가입한 분이 구매하면 제가 리워드를 받습니다. 공식 안내에서 가입하는 분의 쿠폰이 이 코드 때문에 늘어난다는 내용은 확인하지 못했습니다.</p></div>
+<h2 class="cg-bar"><span aria-hidden="true">⚠️</span>헷갈리기 쉬운 부분</h2>
+<table class="cg-tbl red"><thead><tr><th>주의사항</th><th>설명</th></tr></thead><tbody>
+<tr><td><span class="cg-badge">코드가 사람마다 다름</span></td><td>검색하면 사람마다 다른 추천 코드가 나오는데, 회원마다 따로 발급되는 값이기 때문입니다.</td></tr>
+<tr><td><span class="cg-badge">링크로 가입</span></td><td>링크를 누르면 추천 코드 값이 브라우저에 저장되는 방식으로 확인됩니다. 시크릿 창이나 다른 기기로 옮기면 자동 반영이 안 될 수 있어서, 그때는 코드 칸에 직접 입력하세요.</td></tr>
+<tr><td><span class="cg-badge">큰 금액 문구</span></td><td>다른 글에는 3만 원, 2만 원 같은 금액이 적혀 있기도 합니다. 2026.10.15 기준 공식 홈페이지에서는 그런 금액을 확인하지 못했습니다.</td></tr>
+<tr><td><span class="cg-badge">가입 후 입력</span></td><td>가입한 뒤에 추천 코드를 넣는 방법은 공식 안내에서 확인하지 못했습니다. 이미 가입했다면 고객센터에 문의하세요.</td></tr>
+<tr><td><span class="cg-badge">고객센터</span></td><td>1670-6135 · 평일 09~17시(점심 12~13시) · 토·일·공휴일 휴무</td></tr>
+</tbody></table>
+<h2 class="cg-bar"><span aria-hidden="true">❓</span>자주 묻는 질문</h2>
+<div class="cg-qa"><h3>추천 코드 없이 가입해도 쿠폰을 받나요?</h3><p>공식 홈페이지의 쿠폰 배너에는 추천 코드를 입력해야 한다는 조건이 적혀 있지 않았습니다. 다만 가입 경로에 따라 실제 지급이 달라지는지는 확인하지 못했어요. 가입 후 쿠폰함을 확인하고, 궁금하면 고객센터에 물어보세요.</p></div>
+<div class="cg-qa"><h3>쿠폰을 중복으로 쓸 수 있나요?</h3><p>쿠폰마다 사용 조건이 다르고, 중복 사용 여부는 배너 문구만으로 알 수 없습니다. 쿠폰함의 상세 안내에서 확인하세요.</p></div>
+<div class="cg-qa"><h3>이미 가입한 계정에 추천 코드를 넣을 수 있나요?</h3><p>공식 안내에서 가입 후 입력하는 방법은 확인하지 못했습니다. 고객센터에 문의해야 합니다.</p></div>
+<h2 class="cg-bar"><span aria-hidden="true">🔄</span>업데이트 이력</h2>
+<ul class="cg-log"><li>2026.10.15: 공식 홈페이지 쿠폰 배너와 리워드 프로그램 안내, 가입 링크 동작을 확인하고 최초 작성</li></ul>
+<p>쿠폰 금액과 조건은 바뀔 수 있으니 가입 전에 미트리 공식 홈페이지에서 한 번 더 확인하세요.</p>
+<h2 class="cg-bar"><span aria-hidden="true">📌</span>핵심 정리</h2>
+<div class="cg-call navy"><ul class="cg-sum"><li>가입 링크로 들어가면 추천 코드가 함께 전달되고, 가입 화면 맨 위에서 확인할 수 있습니다.</li><li>공식 홈페이지에서 확인된 쿠폰은 첫 구매 3,000원, 카카오톡 채널 추가 2,000원입니다.</li><li>이 코드로 가입한 분이 구매하면 코드 주인인 제가 리워드를 받습니다.</li></ul></div>
+<p class="cg-ref">참고자료: 미트리 공식 홈페이지(metree.co.kr) 메인 쿠폰 배너, 리워드 프로그램 안내(metree.co.kr/content/content.php?cont=reward_intro), 확인일 2026.10.15</p>
+<div class="cg-end"></div>
+<div class="cg-toast" role="status" aria-live="polite"></div>
+<div class="cg-sticky" aria-label="추천 코드 바로가기"><b>100343146</b><button type="button" class="cg-btn cg-btn-fill" data-cg-copy="100343146">코드 복사</button><a class="cg-btn cg-btn-go" href="https://metree.co.kr/index/index.php?sponsor=100343146" target="_blank" rel="sponsored nofollow noopener">가입</a></div>
+<div class="cg-lb" role="dialog" aria-modal="true" aria-label="이미지 크게 보기"><div class="cg-lb-in"><button type="button" class="cg-lb-x" aria-label="닫기">×</button><div class="cg-lb-body"></div><p class="cg-lb-cap"></p></div></div>
+<script>
+(function(){
+var root=document.currentScript&&document.currentScript.parentNode;if(!root||root.getAttribute('data-cg-init'))return;root.setAttribute('data-cg-init','1');
+var toast=root.querySelector('.cg-toast'),tt;
+function say(m){toast.textContent=m;toast.classList.add('on');clearTimeout(tt);tt=setTimeout(function(){toast.classList.remove('on')},2400)}
+function copy(text,done){
+function fb(){var a=document.createElement('textarea');a.value=text;a.setAttribute('readonly','');a.style.cssText='position:fixed;top:0;left:0;opacity:0';document.body.appendChild(a);a.select();var ok=false;try{ok=document.execCommand('copy')}catch(e){}document.body.removeChild(a);done(ok)}
+if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(text).then(function(){done(true)},fb)}else{fb()}}
+[].forEach.call(root.querySelectorAll('[data-cg-copy]'),function(b){
+b.setAttribute('data-label',b.textContent);
+b.addEventListener('click',function(){
+copy(b.getAttribute('data-cg-copy'),function(ok){
+say(ok?'코드를 복사했어요. 가입 화면에서 붙여넣으세요.':'복사에 실패했어요. 코드를 길게 눌러 직접 복사해 주세요.');
+if(ok){b.textContent='복사됨 ✓';setTimeout(function(){b.textContent=b.getAttribute('data-label')},1600)}})})});
+var lb=root.querySelector('.cg-lb'),body=lb.querySelector('.cg-lb-body'),cap=lb.querySelector('.cg-lb-cap'),x=lb.querySelector('.cg-lb-x'),back;
+function close(){lb.classList.remove('on');body.innerHTML='';document.body.style.overflow='';if(back)back.focus()}
+[].forEach.call(root.querySelectorAll('[data-cg-zoom]'),function(b){
+b.addEventListener('click',function(){back=b;var s=b.querySelector('svg,img');body.innerHTML=s?s.outerHTML:'';cap.textContent=b.getAttribute('data-caption')||'';lb.classList.add('on');document.body.style.overflow='hidden';x.focus()})});
+lb.addEventListener('click',function(e){if(e.target===lb||e.target===x)close()});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&lb.classList.contains('on'))close()});
+var bar=root.querySelector('.cg-sticky'),first=root.querySelector('.cg-row'),end=root.querySelector('.cg-end'),tick=false;
+function chk(){tick=false;var r=first.getBoundingClientRect(),e=end.getBoundingClientRect();bar.classList.toggle('on',r.bottom<0&&e.top>window.innerHeight)}
+function onS(){if(!tick){tick=true;requestAnimationFrame(chk)}}
+if(bar&&first&&end){window.addEventListener('scroll',onS,{passive:true});window.addEventListener('resize',onS);chk()}
+})();
+</script>
+</div>
