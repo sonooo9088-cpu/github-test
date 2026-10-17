@@ -1,0 +1,117 @@
+<style>
+.cg-page{--navy:#14213d;--orange:#ff7a1a;--cream:#fff7ed;--line:#e3e6ec;--muted:#5b6475;color:#222;line-height:1.75;font-size:16px}
+.cg-page *{box-sizing:border-box}
+.cg-page p{margin:0 0 1rem}
+.cg-page h3{font-size:1.08rem;line-height:1.5;margin:0}
+.cg-bar{display:flex;align-items:center;gap:10px;margin:2.4rem 0 1rem;padding:14px 18px;background:var(--cream);border-left:6px solid var(--orange);border-radius:0 12px 12px 0;font-size:1.22rem;line-height:1.4;font-weight:800;color:var(--navy)}
+.cg-bar:first-of-type{margin-top:1.2rem}
+.cg-call{background:#fffaf5;border:1px solid #ffe0c7;border-left:6px solid var(--orange);border-radius:0 14px 14px 0;padding:16px 18px;margin:0 0 1rem}
+.cg-call p:last-child{margin-bottom:0}
+.cg-call.navy{background:#f5f7fb;border-color:#dbe1ee;border-left-color:var(--navy)}
+.cg-call b{color:var(--navy)}
+.cg-notice{background:#f5f7fb;border:1px solid #dbe1ee;border-radius:12px;padding:13px 16px;font-size:.93rem;line-height:1.7;margin:0 0 6px}
+.cg-notice strong{display:inline-block;background:var(--navy);color:#fff;border-radius:6px;padding:1px 8px;margin-right:6px;font-size:.8rem}
+.cg-fig{margin:0}
+.cg-zoom{position:relative;display:block;width:100%;padding:0;border:0;border-radius:14px;overflow:hidden;background:var(--cream);cursor:zoom-in;line-height:0}
+.cg-zoom svg,.cg-zoom img{display:block;width:100%;height:auto;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.cg-zoom-ic{position:absolute;right:8px;bottom:8px;width:28px;height:28px;border-radius:50%;background:rgba(20,33,61,.82);color:#fff;font-size:17px;line-height:28px;text-align:center;opacity:0;transition:opacity .25s}
+.cg-zoom:focus-visible,.cg-thumb:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
+@media (hover:hover){.cg-zoom:hover svg,.cg-zoom:hover img{transform:scale(1.09)}.cg-zoom:hover .cg-zoom-ic{opacity:1}}
+@media (hover:none){.cg-zoom-ic{opacity:1}}
+.cg-row{display:grid;grid-template-columns:132px 1fr 156px;gap:18px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:18px;padding:14px;box-shadow:0 6px 20px rgba(20,33,61,.08);margin:0 0 14px}
+.cg-thumb{display:block;width:132px;height:132px;border-radius:14px;overflow:hidden;background:var(--navy);line-height:0;position:relative;text-decoration:none}
+.cg-thumb svg,.cg-thumb img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.cg-thumb::after{content:"가입하러 가기 →";position:absolute;left:0;right:0;bottom:0;padding:7px 0;background:rgba(20,33,61,.88);color:#fff;font-size:.78rem;font-weight:700;line-height:1.2;text-align:center;transform:translateY(100%);transition:transform .3s}
+@media (hover:hover){.cg-thumb:hover svg,.cg-thumb:hover img{transform:scale(1.14)}.cg-thumb:hover::after{transform:translateY(0)}}
+.cg-row-title{margin:0 0 4px;font-weight:800;font-size:1.12rem;line-height:1.45;color:var(--navy)}
+.cg-row-sub{margin:0 0 8px;font-size:.9rem;color:var(--muted)}
+.cg-codechip{display:inline-block;background:#f4f5f8;border:1px dashed #aab3c5;border-radius:8px;padding:3px 12px;font-size:1.15rem;font-weight:800;letter-spacing:2px;color:var(--navy);font-family:ui-monospace,Menlo,Consolas,monospace;user-select:all;-webkit-user-select:all}
+.cg-row-act{display:flex;flex-direction:column;gap:8px}
+.cg-btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 14px;border-radius:10px;font-size:1rem;font-weight:800;text-decoration:none;cursor:pointer;border:2px solid var(--orange);line-height:1.2;font-family:inherit;transition:transform .15s,background .2s}
+.cg-btn:active{transform:scale(.97)}
+.cg-btn:focus-visible{outline:3px solid var(--navy);outline-offset:2px}
+.cg-btn-fill{background:var(--orange);color:var(--navy)}
+.cg-btn-fill:hover{background:#ff8f3f}
+.cg-btn-go{background:var(--navy);border-color:var(--navy);color:#fff}
+.cg-btn-go:hover{background:#1d2f57;color:#fff}
+.cg-steps{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:12px 0 6px}
+.cg-step{background:#fff;border:1px solid var(--line);border-radius:16px;padding:12px 12px 14px;box-shadow:0 4px 14px rgba(20,33,61,.05)}
+.cg-step h3{margin:12px 4px 2px;color:var(--navy)}
+.cg-step p{margin:0 4px;font-size:.95rem;color:#333}
+.cg-note{font-size:.85rem;color:var(--muted);margin:6px 0 1rem}
+.cg-tbl{width:100%;border-collapse:separate;border-spacing:0;border-radius:12px;overflow:hidden;box-shadow:0 2px 12px rgba(20,33,61,.09);margin:0 0 1rem;font-size:.96rem}
+.cg-tbl thead th{background:var(--navy);color:#fff;padding:13px 16px;text-align:left;font-weight:800}
+.cg-tbl.red thead th{background:#d9423f}
+.cg-tbl td{padding:12px 16px;border-bottom:1px solid var(--line);vertical-align:top;background:#fff}
+.cg-tbl tbody tr:nth-child(even) td{background:#fafbfc}
+.cg-tbl tbody tr:last-child td{border-bottom:0}
+.cg-tbl td:first-child{width:30%}
+.cg-badge{display:inline-block;padding:3px 10px;border-radius:7px;background:#e6f0ff;color:#1d3f8f;font-weight:800;font-size:.9rem;line-height:1.5}
+.cg-tbl.red .cg-badge{background:#fde3e1;color:#a92d2a}
+.cg-qa{border:1px solid var(--line);border-radius:14px;padding:12px 16px 4px;margin:0 0 12px;background:#fff}
+.cg-qa h3{color:var(--navy);margin:0 0 6px}
+.cg-qa h3::before{content:"Q. ";color:var(--orange)}
+.cg-log{margin:0 0 1rem;padding:0;list-style:none}
+.cg-log li{padding:10px 14px;background:#f5f7fb;border-radius:10px}
+.cg-sum{margin:0;padding-left:1.2rem}
+.cg-sum li{margin:6px 0}
+.cg-ref{font-size:.85rem;color:var(--muted)}
+.cg-end{height:1px}
+.cg-toast{position:fixed;left:50%;bottom:90px;transform:translate(-50%,20px);background:var(--navy);color:#fff;padding:11px 18px;border-radius:999px;font-size:.92rem;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.25);opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;z-index:99998;max-width:calc(100% - 32px);text-align:center}
+.cg-toast.on{opacity:1;transform:translate(-50%,0)}
+.cg-sticky{position:fixed;left:0;right:0;bottom:0;z-index:99997;background:var(--navy);color:#fff;padding:10px 14px calc(10px + env(safe-area-inset-bottom));display:none;align-items:center;gap:10px;transform:translateY(110%);transition:transform .3s}
+.cg-sticky.on{transform:translateY(0)}
+.cg-sticky b{font-size:1.1rem;letter-spacing:1.5px;color:var(--orange);flex:1;white-space:nowrap;font-family:ui-monospace,Menlo,Consolas,monospace}
+.cg-sticky .cg-btn{min-height:44px;padding:0 14px;font-size:.92rem}
+.cg-sticky .cg-btn-go{border-color:#fff}
+.cg-lb{position:fixed;inset:0;z-index:99999;background:rgba(10,16,32,.86);display:none;align-items:center;justify-content:center;padding:20px}
+.cg-lb.on{display:flex}
+.cg-lb-in{position:relative;width:min(920px,100%);max-height:100%;text-align:center}
+.cg-lb-body svg,.cg-lb-body img{display:block;width:100%;height:auto;max-height:78vh;object-fit:contain;border-radius:14px;background:#fff}
+.cg-lb-cap{margin:10px 0 0;color:#e6e9f0;font-size:.95rem}
+.cg-lb-x{position:absolute;right:-6px;top:-46px;width:40px;height:40px;border-radius:50%;border:0;background:#fff;color:var(--navy);font-size:22px;font-weight:800;cursor:pointer}
+@media (max-width:720px){
+.cg-bar{font-size:1.1rem;padding:12px 14px}
+.cg-row{grid-template-columns:96px 1fr;gap:12px}
+.cg-thumb{width:96px;height:96px}
+.cg-thumb::after{display:none}
+.cg-row-act{grid-column:1 / -1;flex-direction:row}
+.cg-row-act .cg-btn{flex:1}
+.cg-steps{grid-template-columns:1fr}
+.cg-sticky{display:flex}
+.cg-tbl td:first-child{width:36%}
+.cg-lb-x{top:-48px;right:0}
+}
+@media (prefers-reduced-motion:reduce){.cg-zoom svg,.cg-zoom img,.cg-thumb svg,.cg-thumb img,.cg-thumb::after,.cg-toast,.cg-sticky,.cg-btn{transition:none}}
+</style>
+<style>
+.cg-page .cg-linkbtn{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;margin:0 8px 8px 0;border-radius:10px;background:#14213d;color:#fff;font-weight:800;text-decoration:none}
+.cg-page .cg-linkbtn:hover{background:#1d2f57;color:#fff}
+.cg-page .cg-linkbtn.alt{background:#ff7a1a;color:#14213d}
+</style>
+<div class="cg-page">
+<div class="cg-call"><p><b>📢 한 줄 안내:</b> 쿠폰가게의 추천 코드와 가입 링크는 <b>제휴 링크</b>입니다. 이 링크로 가입이 이뤄지거나 가입한 분이 구매하면, 운영자가 해당 서비스로부터 포인트나 리워드를 받습니다.</p></div>
+<h2 class="cg-bar"><span aria-hidden="true">🧾</span>서비스별로 운영자가 받는 것</h2>
+<table class="cg-tbl"><thead><tr><th>서비스</th><th>운영자가 받는 것</th><th>기준</th></tr></thead><tbody>
+<tr><td><span class="cg-badge">크림(KREAM)</span></td><td>이 코드로 가입이 완료되면 추천한 사람에게 포인트 지급(매월 1일, 전월 가입 완료 수 기준)</td><td>공식 친구 초대 이벤트 안내 (확인일 2026.10.15)</td></tr>
+<tr><td><span class="cg-badge">미트리</span></td><td>이 코드로 가입한 신규 회원이 상품을 구매하면 구매 금액의 일부(최대 7%)를 리워드로 지급</td><td>공식 리워드 프로그램 안내 (확인일 2026.10.15)</td></tr>
+</tbody></table>
+<p>지급 금액과 조건은 각 서비스의 공식 안내를 따르며, 서비스가 바꾸면 달라질 수 있습니다.</p>
+<h2 class="cg-bar"><span aria-hidden="true">📍</span>어디에 표시하나요</h2>
+<ul class="cg-list">
+<li class="ok">제휴 코드나 링크가 있는 모든 페이지의 <b>맨 위</b>에 광고·제휴 안내 문구를 둡니다.</li>
+<li class="ok">제휴 링크에는 검색엔진에 광고성 링크임을 알리는 표시(<code>rel="sponsored"</code>)를 붙입니다.</li>
+<li class="ok">링크는 "가입하러 가기"처럼 제휴 링크임을 알 수 있는 버튼으로 표시합니다.</li>
+</ul>
+<h2 class="cg-bar"><span aria-hidden="true">⚖️</span>정보를 쓰는 태도</h2>
+<table class="cg-tbl"><thead><tr><th>상황</th><th>쿠폰가게의 방식</th></tr></thead><tbody>
+<tr><td><span class="cg-badge">조건이 불리할 때</span></td><td>오입력하면 포인트를 못 받는 것처럼 불리한 조건도 그대로 적습니다.</td></tr>
+<tr><td><span class="cg-badge">확인하지 못했을 때</span></td><td>금액이나 조건을 확인하지 못했으면 적지 않고 "확인하지 못했다"고 씁니다.</td></tr>
+<tr><td><span class="cg-badge">다른 곳 정보와 다를 때</span></td><td>블로그마다 금액이 다르더라도 공식 안내에서 확인한 내용만 씁니다.</td></tr>
+</tbody></table>
+<h2 class="cg-bar"><span aria-hidden="true">🙅</span>공식 사이트가 아닙니다</h2>
+<p>쿠폰가게는 크림, 미트리와 관계없는 독립 사이트입니다. 가입, 결제, 포인트와 리워드 지급에 관한 문의는 각 서비스의 고객센터에 해야 합니다.</p>
+<h2 class="cg-bar"><span aria-hidden="true">🔄</span>업데이트 이력</h2>
+<ul class="cg-log"><li>2026.10.17: 광고·제휴 안내 페이지 최초 작성 (서비스별 내용은 2026.10.15 확인 기준)</li></ul>
+<p><a class="cg-linkbtn" href="/about/">쿠폰가게 소개</a><a class="cg-linkbtn" href="/contact/">문의하기</a></p>
+</div>
